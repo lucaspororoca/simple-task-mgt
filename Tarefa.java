@@ -7,8 +7,8 @@ public class Tarefa {
     Categoria categoria = new Categoria();
     private String nome = categoria.nome;
 
-    public Tarefa(String nome, String titulo, String descricao, String prazo, int prioridade){
-        this.nome = nome;
+    public Tarefa(String nome1, String titulo, String descricao, String prazo, int prioridade){
+        this.nome = nome1;
         this.titulo = titulo;
         this.descricao = descricao;
         this.prazo = prazo;
@@ -32,19 +32,19 @@ public class Tarefa {
     }
 
     public void setTitulo(String titulo2){
-        titulo2 = titulo;
+        titulo = titulo2;
     }
 
     public void setDescricao(String descricao2){
-        descricao2 = descricao;
+        descricao = descricao2;
     }
 
     public void setPrazo(String prazo2){
-        prazo2 = prazo;
+        prazo = prazo2;
     }
 
     public void setPrioridade(int prioridade2){
-        prioridade2 = prioridade;
+        prioridade = prioridade2;
     }
 
     public void exibirDetalhes(){

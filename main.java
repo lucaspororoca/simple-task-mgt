@@ -3,9 +3,8 @@
 
 public class main{
     public static void main(String[] args){
-        Tarefa tarefa1 = new Tarefa("", "","","",5);
-        tarefa1.setTitulo("Tarefa simples POO");
-        String Titulo = tarefa1.getTitulo();
+        Tarefa tarefa1 = new Tarefa("LUCAS", "","PROJETO AULA 2","06/09/2024",5);
+        tarefa1.setTitulo("TRABALHO POO");
         tarefa1.exibirDetalhes();
     }
 }    
