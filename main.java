@@ -7,4 +7,4 @@ public class main{
         tarefa1.setTitulo("TRABALHO POO");
         tarefa1.exibirDetalhes();
     }
-}    
+}   
