@@ -48,8 +48,10 @@ public class Tarefa {
     }
 
     public void exibirDetalhes(){
+        setTitulo("TRABALHO POO");
+        
         System.out.println("Nome: " + this.nome);
-        System.out.println("Titulo: " + this.titulo);
+        System.out.println("Titulo: " + getTitulo());
         System.out.println("Descrição: " + this.descricao);
         System.out.println("Prazo: " + this.prazo);
         System.out.println("Prioridade: " + this.prioridade);
