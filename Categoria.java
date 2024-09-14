@@ -5,7 +5,7 @@ public class Categoria {
         return this.nome;
     }
 
-    public void setNome(String nome){
-        nome = nome;
+    public void setNome(String nome1){
+        nome = nome1;
     }
 }

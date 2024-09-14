@@ -1,10 +1,14 @@
+import java.util.Scanner;
+
 public class Tarefa {
+    Categoria categoria = new Categoria();
+    Data data = new Data();
+    Scanner scanner = new Scanner(System.in);
+
     private String titulo;
     private String descricao;
     private String prazo;
     private int prioridade;
-
-    Categoria categoria = new Categoria();
     private String nome = categoria.nome;
 
     public Tarefa(String nome1, String titulo, String descricao, String prazo, int prioridade){
@@ -13,6 +17,16 @@ public class Tarefa {
         this.descricao = descricao;
         this.prazo = prazo;
         this.prioridade = prioridade;
+    }
+
+    public Tarefa(String titulo, String prazo){
+        this.titulo = titulo;
+        this.prazo = prazo;
+    }
+
+    public Tarefa(String titulo, int Prioridade1){
+        this.titulo = titulo;
+        setPrioridade(prioridade);
     }
 
     public String getTitulo(){
@@ -43,17 +57,29 @@ public class Tarefa {
         prazo = prazo2;
     }
 
-    public void setPrioridade(int prioridade2){
-        prioridade = prioridade2;
+    public void setPrioridade(int prioridade1){
+        if(prioridade1 < 0){
+            prioridade = 0;
+        }
+        
+        if(prioridade1 > 5){
+            prioridade = 5;
+        }
     }
 
     public void exibirDetalhes(){
+
         setTitulo("TRABALHO POO");
         
         System.out.println("Nome: " + this.nome);
+        scanner.nextLine();
+
         System.out.println("Titulo: " + getTitulo());
         System.out.println("Descrição: " + this.descricao);
         System.out.println("Prazo: " + this.prazo);
+        scanner.nextInt();
         System.out.println("Prioridade: " + this.prioridade);
+
+        //data.ExibirData();
     }
 }
