@@ -1,4 +1,8 @@
 import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.time.format.DateTimeParseException;
+
 
 public class Tarefa {
     Categoria categoria = new Categoria();
@@ -19,6 +23,18 @@ public class Tarefa {
         this.prioridade = prioridade;
     }
 
+    public Tarefa(String titulo, String descricao,String prazo, int prioridade){
+        this.titulo = titulo;
+        this.descricao = "descrição padrão";
+        setPrazo(prazo);
+        setPrioridade(prioridade);
+    }
+
+    public Tarefa(String titulo, String prazo, int prioridade){
+        this.titulo = titulo;
+        this.descricao = "descrição padrão";
+    }
+
     public Tarefa(String titulo, String prazo){
         this.titulo = titulo;
         this.prazo = prazo;
@@ -26,7 +42,18 @@ public class Tarefa {
 
     public Tarefa(String titulo, int Prioridade1){
         this.titulo = titulo;
-        setPrioridade(prioridade);
+        this.descricao = descricao;
+        this.prazo = prazo;
+        setPrioridade(Prioridade1);
+    }
+
+    private boolean isPrazoValido(String prazo) {
+        try {
+            LocalDate.parse(prazo);
+            return true;
+        } catch (DateTimeParseException e){
+            return false;
+        }
     }
 
     public String getTitulo(){
@@ -53,33 +80,36 @@ public class Tarefa {
         descricao = descricao2;
     }
 
-    public void setPrazo(String prazo2){
-        prazo = prazo2;
+    public void setPrazo(String prazo) {
+        if (isPrazoValido(prazo)) {
+            System.out.println("Prazo: " + getPrazo());
+        } else {
+            System.out.println("Prazo inválido");
+        }
     }
 
     public void setPrioridade(int prioridade1){
-        if(prioridade1 < 0){
-            prioridade = 0;
-        }
-        
-        if(prioridade1 > 5){
-            prioridade = 5;
+        if(prioridade1 >= 1 || prioridade1 <= 5){
+            this.prioridade = prioridade1;
+            System.out.println("prioridade: " + getPrioridade());
+        }if(prioridade1 < 1 || prioridade1 > 5){
+            System.out.println("Prioridade inválida.");
         }
     }
 
-    public void exibirDetalhes(){
+    public long calcularDiasRestantes() {
+        LocalDate dataPrazo = LocalDate.parse(this.prazo);
+        LocalDate hoje = LocalDate.now();
 
+        return ChronoUnit.DAYS.between(hoje, dataPrazo);
+    }
+
+    public void exibirDetalhes() {
         setTitulo("TRABALHO POO");
-        
-        System.out.println("Nome: " + this.nome);
-        scanner.nextLine();
-
-        System.out.println("Titulo: " + getTitulo());
+        //System.out.println("Nome: " + this.nome);
         System.out.println("Descrição: " + this.descricao);
-        System.out.println("Prazo: " + this.prazo);
-        scanner.nextInt();
-        System.out.println("Prioridade: " + this.prioridade);
-
-        //data.ExibirData();
+        //setPrazo(prazo);
+        setPrioridade(prioridade);
+        System.out.print("Prioridade: " + getPrioridade());
     }
 }
