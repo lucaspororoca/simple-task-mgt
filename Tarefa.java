@@ -42,8 +42,6 @@ public class Tarefa {
 
     public Tarefa(String titulo, int Prioridade1){
         this.titulo = titulo;
-        this.descricao = descricao;
-        this.prazo = prazo;
         setPrioridade(Prioridade1);
     }
 
@@ -91,7 +89,7 @@ public class Tarefa {
     public void setPrioridade(int prioridade1){
         if(prioridade1 >= 1 || prioridade1 <= 5){
             this.prioridade = prioridade1;
-            System.out.println("prioridade: " + getPrioridade());
+            //System.out.println("prioridade: " + getPrioridade());
         }if(prioridade1 < 1 || prioridade1 > 5){
             System.out.println("Prioridade inválida.");
         }
@@ -107,9 +105,12 @@ public class Tarefa {
     public void exibirDetalhes() {
         setTitulo("TRABALHO POO");
         //System.out.println("Nome: " + this.nome);
+        //System.out.println("Descrição: " + this.titulo);
         System.out.println("Descrição: " + this.descricao);
+        //System.out.println("Descrição: " + this.prazo);
+        //System.out.println("Descrição: " + this.prioridade);
         //setPrazo(prazo);
-        setPrioridade(prioridade);
-        System.out.print("Prioridade: " + getPrioridade());
+        setPrioridade(0);
+        //System.out.print("Prioridade: " + getPrioridade());
     }
 }
