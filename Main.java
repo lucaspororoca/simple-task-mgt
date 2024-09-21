@@ -39,7 +39,7 @@ public class Main{
         listaTarefas[0] = tarefa1;
         listaTarefas[1] = tarefa2;
         listaTarefas[2] = tarefaurgente;
-        //listaTarefas[3] = tarefaprazoflexivel;
+        listaTarefas[3] = tarefaprazoflexivel;
 
         //for (Tarefa tarefa : listaTarefas) {
            //tarefa.exibirDetalhes();

@@ -1,11 +1,12 @@
 public class TarefaSemPrazo extends Tarefa{
 
     public TarefaSemPrazo(String titulo, String descricao, String prazo, int prioridade){
-        super(titulo, descricao, prazo, 5);
+        super(titulo, descricao, "", 5);
     }
-    
+
+    @Override
     public long calcularDiasRestantes() {
-        return super.calcularDiasRestantes() - 1;
+        return - 1;
     }
 
     @Override
