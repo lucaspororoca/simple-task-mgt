@@ -20,4 +20,3 @@ public class TarefaPrazoFlexivel extends Tarefa{
         System.out.println("Dias de Flexibilidade: " + this.diasFlexibilidade);
     }
 }
-

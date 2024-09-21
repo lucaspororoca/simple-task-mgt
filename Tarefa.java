@@ -4,7 +4,7 @@ import java.time.temporal.ChronoUnit;
 import java.time.format.DateTimeParseException;
 
 
-public class Tarefa {
+public class Tarefa implements AcoesTarefa{
     Categoria categoria = new Categoria();
     Data data = new Data();
     Scanner scanner = new Scanner(System.in);
@@ -13,10 +13,10 @@ public class Tarefa {
     private String descricao;
     private String prazo;
     private int prioridade;
-    private String nome = categoria.nome;
+    //private String nome = categoria.nome;
 
     public Tarefa(String nome1, String titulo, String descricao, String prazo, int prioridade){
-        this.nome = nome1;
+        //this.nome = nome1;
         this.titulo = titulo;
         this.descricao = descricao;
         this.prazo = prazo;
@@ -112,5 +112,14 @@ public class Tarefa {
         //setPrazo(prazo);
         setPrioridade(0);
         //System.out.print("Prioridade: " + getPrioridade());
+    }
+
+    @Override
+    public void executarTarefa(){
+        System.out.println("Tarefa " + this.titulo + " foi executada");
+    }
+
+    public void cancelarTarefa(){
+        System.out.println("Tarefa " + this.titulo + " foi cancelada");
     }
 }

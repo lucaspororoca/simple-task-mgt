@@ -29,6 +29,8 @@ public class Main{
 
         System.out.println("=============== Tarefa 4 ===============");
 
+        tarefa1.executarTarefa();
+
         TarefaUrgente tarefaurgente = new TarefaUrgente("Estudar para provas", "Tarefa para estudos", "2024-06-12",1, "Prioridade de estudos");
         TarefaPrazoFlexivel tarefaprazoflexivel = new TarefaPrazoFlexivel("Estudar para Prova prazo", "tarefa prazo flex.", "2024-06-12", 2, 3);
 
@@ -37,10 +39,10 @@ public class Main{
         listaTarefas[0] = tarefa1;
         listaTarefas[1] = tarefa2;
         listaTarefas[2] = tarefaurgente;
-        listaTarefas[3] = tarefaprazoflexivel;
+        //listaTarefas[3] = tarefaprazoflexivel;
 
-        for (Tarefa tarefa : listaTarefas) {
-            tarefa.exibirDetalhes();
-        }
+        //for (Tarefa tarefa : listaTarefas) {
+           //tarefa.exibirDetalhes();
+        //}
     }
 }   

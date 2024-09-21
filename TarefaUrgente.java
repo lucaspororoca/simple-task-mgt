@@ -1,4 +1,4 @@
-public class TarefaUrgente extends Tarefa{
+public class TarefaUrgente extends Tarefa implements Notificacao{
 
     private String razaoUrgencia;
 
@@ -15,8 +15,13 @@ public class TarefaUrgente extends Tarefa{
         this.razaoUrgencia = razaoUrgencia;
     }
 
+    @Override
     public void exibirDetalhes(){
         super.exibirDetalhes();
         System.out.println("Razão da Urgencia: " + this.razaoUrgencia);
+    }
+
+    public void enviarNotificacao(){
+
     }
 }
